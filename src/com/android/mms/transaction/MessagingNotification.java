@@ -912,6 +912,14 @@ public class MessagingNotification {
 
         final Notification notification;
 
+        if (messageCount == 1 || uniqueThreadCount == 1) {
+            CharSequence callText = context.getText(R.string.menu_call);
+            Intent callIntent = new Intent(Intent.ACTION_CALL);
+            callIntent.setData(mostRecentNotification.mSender.getPhoneUri());
+            PendingIntent mCallPendingIntent = PendingIntent.getActivity(context, 0, callIntent, 0);
+            noti.addAction(R.drawable.ic_menu_call, callText, mCallPendingIntent);
+        }
+
         if (messageCount == 1) {
             // We've got a single message
 

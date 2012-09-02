@@ -32,6 +32,7 @@
         android:paddingLeft="5dip"
         android:paddingRight="5dip"
         android:orientation="vertical"
+	android:background="@android:color/black"
         android:visibility="gone">
 
         <ViewStub android:id="@+id/recipients_editor_stub"
@@ -42,7 +43,8 @@
 
         <EditText android:id="@+id/subject"
             android:textAppearance="?android:attr/textAppearanceMediumInverse"
-            android:textColor="@android:color/black"
+	    android:background="@android:color/black"
+            android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:capitalize="sentences"
@@ -70,6 +72,7 @@
             android:visibility="gone"
             android:fadingEdge="none"
             android:layout_marginBottom="1dip"
+	    android:background="@android:color/black"
             android:cacheColorHint="@android:color/white"
             android:scrollbarAlwaysDrawVerticalTrack="false"
             android:scrollbarStyle="insideOverlay"
@@ -116,7 +119,7 @@
             </ScrollView>
 
             <!-- Divider -->
-            <View android:background="#eeeeee"
+            <View android:background="#ff000000"
                 android:layout_width="match_parent"
                 android:layout_height="1dp" />
 
@@ -125,10 +128,10 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#fff" >
+                android:background="#ff000000" >
 
                 <EditText
-                    android:textColor="@android:color/black"
+                    android:textColor="@android:color/white"
                     android:id="@+id/embedded_text_editor"
                     android:layout_width="0dip"
                     android:layout_gravity="bottom"
@@ -159,7 +162,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal|bottom"
-                        android:textColor="#cc333333"
+                        android:textColor="#cccfcfcf"
                         android:textSize="12sp"
                         android:textStyle="bold"
                         android:paddingLeft="3dip"

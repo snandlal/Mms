@@ -28,8 +28,8 @@
         android:layout_height="match_parent"
         android:drawSelectorOnTop="false"
         android:scrollbarStyle="insideOverlay"
-        android:background="@android:color/white"
-        android:cacheColorHint="@android:color/white"
+        android:background="@android:color/black"
+        android:cacheColorHint="@android:color/black"
         android:fadingEdgeLength="16dip" />
 
     <TextView android:id="@+id/empty"
@@ -37,5 +37,6 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:text="@string/loading_conversations"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium" 
+	android:background="@android:color/black" />
 </RelativeLayout>

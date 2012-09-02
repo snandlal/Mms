@@ -53,7 +53,7 @@
                       android:layout_height="wrap_content"
                       android:layout_weight="1" />
             <TextView android:id="@android:id/text2"
-                      android:textColor="@drawable/list_item_font_secondary"
+                      android:textColor="@drawable/list_item_font_primary"
                       android:textSize="10sp"
                       android:layout_width="wrap_content"
                       android:layout_height="wrap_content"

@@ -21,10 +21,12 @@
     <!-- Activity background color -->
     <drawable name="class_zero_background">#7f000000</drawable>
 
-    <!-- text color -->
+    <!-- Text & ackground color -->
     <drawable name="text_color_red">#ffff4444</drawable>
     <drawable name="text_color_black">#ff000000</drawable>
     <drawable name="text_color_white">#ffffffff</drawable>
+    <item type="drawable" name="gray">#ff191919</item>
+    <item type="drawable" name="black">#ff000000</item>
     <color name="background_dark">#ff191919</color>
     <color name="text_hairline">#ffcccccc</color>
     <color name="message_count_color">#66cfcfcf</color>
@@ -32,7 +34,7 @@
     <!-- Chat "sent time" text background -->
     <color name="timestamp_color">#bfefefef</color>
 
-    <!-- the background color used for unread conversation -->
+    <!-- The background color used for unread conversation -->
     <color name="unread_bgcolor">#ff191919</color>
     <color name="read_bgcolor">#ff000000</color>
 

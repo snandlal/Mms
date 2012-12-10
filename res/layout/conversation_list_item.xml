@@ -19,9 +19,9 @@
 -->
 
 <com.android.mms.ui.ConversationListItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="?android:activatedBackgroundIndicator"
     android:layout_width="match_parent"
     android:layout_height="?android:attr/listPreferredItemHeight"
-    android:background="?android:attr/activatedBackgroundIndicator"
     android:paddingRight="10dip" >
 
     <android.widget.QuickContactBadge

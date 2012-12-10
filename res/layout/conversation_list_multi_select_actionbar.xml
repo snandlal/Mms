@@ -29,6 +29,7 @@
         android:layout_gravity="center_vertical"
         android:layout_centerVertical="true"
         android:textAppearance="?android:attr/textAppearanceMediumInverse"
+	android:textColor="#ffffffff"
         android:layout_weight="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

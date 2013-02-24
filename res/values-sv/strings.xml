@@ -343,9 +343,4 @@
     <string name="attachment_picture" msgid="3709286281567284296">"Bild"</string>
     <string name="notification_separator" msgid="2334673105226536422">"  "</string>
     <string name="enumeration_comma" msgid="213598026698964628">", "</string>
-
-    <string name="pref_title_sms_EnableMultipartSMS">"SMS till MMS"</string>
-    <string name="pref_summary_sms_EnableMultipartSMS">"Konvertera långa SMS till MMS"</string>
-    <string name="pref_title_sms_SmsToMmsTextThreshold">"Antal SMS"</string>
-    <string name="pref_summary_sms_SmsToMmsTextThreshold">"<xliff:g id="COUNT">%1$s</xliff:g> SMS kvar innan MMS-konvertering"</string>
 </resources>

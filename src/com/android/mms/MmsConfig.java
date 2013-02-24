@@ -24,9 +24,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import com.android.internal.telephony.TelephonyProperties;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.content.res.XmlResourceParser;
-import android.preference.PreferenceManager;
 import android.util.Log;
 
 public class MmsConfig {
@@ -70,19 +68,6 @@ public class MmsConfig {
     // If mEnableMultipartSMS is false, then as soon as the user types a message longer
     // than a single segment (i.e. 140 chars), then the message will turn into and be sent
     // as an mms message. This feature exists for carriers that don't support multi-part sms's.
-    // See the comment below for mEnableMultipartSMS.
-    private static int mSmsToMmsTextThreshold = 4;
-    private static int mSmsToMmsTextThresholdMin = 1;            // default value
-    private static int mSmsToMmsTextThresholdMax = 100;          // default value
-
-    // This flag is somewhat confusing. If mEnableMultipartSMS is true, long sms messages are
-    // always sent as multi-part sms messages, with no checked limit on the number of segments.
-    // If mEnableMultipartSMS is false, then mSmsToMmsTextThreshold is used to determine the
-    // limit of the number of sms segments before turning the long sms message into an mms
-    // message. For example, if mSmsToMmsTextThreshold is 4, then a long sms message with three
-    // or fewer segments will be sent as a multi-part sms. When the user types more characters
-    // to cause the message to be 4 segments or more, the send button will show the MMS tag to
-    // indicate the message will be sent as an mms.
     private static boolean mEnableMultipartSMS = true;
 
     // By default, the radio splits multipart sms, not the application. If the carrier or radio
@@ -119,19 +104,6 @@ public class MmsConfig {
                 android.os.SystemProperties.get(TelephonyProperties.PROPERTY_ICC_OPERATOR_NUMERIC));
 
         loadMmsSettings(context);
-    }
-
-    public static int getSmsToMmsTextThreshold() {
-        return mSmsToMmsTextThreshold;
-    }
-    public static void setSmsToMmsTextThreshold(int threshold) {
-        mSmsToMmsTextThreshold = threshold;
-    }
-    public static int getSmsToMmsTextThresholdMin() {
-        return mSmsToMmsTextThresholdMin;
-    }
-    public static int getSmsToMmsTextThresholdMax() {
-        return mSmsToMmsTextThresholdMax;
     }
 
     public static boolean getMmsEnabled() {
@@ -220,9 +192,6 @@ public class MmsConfig {
 
     public static boolean getMultipartSmsEnabled() {
         return mEnableMultipartSMS;
-    }
-    public static void setEnableMultipartSMS(boolean enable) {
-        mEnableMultipartSMS = enable;
     }
 
     public static boolean getSplitSmsEnabled() {
@@ -403,10 +372,6 @@ public class MmsConfig {
                     }
                 }
             }
-            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-            //as the checkbox is checked when the boolean is supposed to be false, double negation :
-            mEnableMultipartSMS = !prefs.getBoolean("pref_key_sms_EnableMultipartSMS", !getMultipartSmsEnabled());
-            mSmsToMmsTextThreshold = prefs.getInt("pref_key_sms_SmsToMmsTextThreshold", getSmsToMmsTextThreshold());
         } catch (XmlPullParserException e) {
             Log.e(TAG, "loadMmsSettings caught ", e);
         } catch (NumberFormatException e) {
